@@ -27,6 +27,7 @@ namespace BankAccount
         {
             this.balance += deposit;
         }
+
         public Decimal GetDeposit()
         {
             return this.deposit;
@@ -36,7 +37,6 @@ namespace BankAccount
         {
             return this.withdrawal;
         }
-        
         public Boolean HasExceededOverdraft(Decimal withdrawal)
         {
             // 0 <= -50

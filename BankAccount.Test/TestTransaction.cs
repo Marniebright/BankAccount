@@ -10,7 +10,7 @@ namespace BankAccountTest
         Transaction transaction;
         public TestTransaction()
         {
-            this.account = new Account("lAvanya", "1234636", "hkd");
+            this.account = new Account("Marnie", "1234636", "hkd");
             this.transaction = new Transaction(account);
         }
 

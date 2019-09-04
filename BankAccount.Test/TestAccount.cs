@@ -10,7 +10,6 @@ namespace BankAccountTest
         [Fact]
         public void GetAccountName()
         {
-            //Assert.Equal(expected, actual)
             Assert.Equal("Marnie", account.GetAccountName());
         }
 
