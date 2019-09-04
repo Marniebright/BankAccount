@@ -9,14 +9,14 @@ namespace BankAccount
         private String accountNumber;
         private String currency;
         private bool accountStatus;
-        private Transactions transactions;
-      
-        public Account(string name, string accountNo, string currency, Transactions transactions)
+        public const Decimal overdraftLimit = -50;
+
+        public Account(string name, string accountNo, string currency)
         {
             this.accoutName = name;
             this.accountNumber = accountNo;
             this.currency = currency;
-            this.transactions = transactions;
+            
         }
         public String GetAccountName()
         {
@@ -39,21 +39,11 @@ namespace BankAccount
             return this.accountStatus ? "Active" : "Inactive";
         }
 
-        public String DisplayAccountDetails()
+        public Decimal GetOverdraftLimit()
         {
-            string details = "Account Number: " + GetAccountNumber() + "\n" +
-                             "Account Name: " + GetAccountName() + "\n" +
-                             "Currency: " + GetCurrency() + "\n" +
-                             "Status: " + GetAccountStatus() + "\n" +
-                             "Balance: " + transactions.GetBalance() + "\n" +
-                             "Has Exceeded Overdraft: " + transactions.GetOverdraftStatus();
-                             
-            return details;
+            return overdraftLimit;
         }
 
-        public Transactions GetTransactions()
-        {
-            return this.transactions;
-        }
+       
     }
 }

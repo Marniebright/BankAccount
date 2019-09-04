@@ -2,19 +2,20 @@
 
 namespace BankAccount
 {
-    public class MainMenu
+    public class Main
     {
         public static void Main(string[] args)
         {
-            Account account = new Account("Marnie", "M1187980", "HKD", new Transactions());
-           
+            Account account = new Account("Marnie", "S12345678", "HKD");
             account.SetAccountStatus(true);
-            account.GetTransactions().DepositFunds(100);
-            account.GetTransactions().WithdrawFunds(100);
-            account.GetTransactions().SetOverdraft(50);
-           
+            Console.WriteLine( "Account Number: " + account.GetAccountNumber() + "\n" +
+                                "Account Name: " + account.GetAccountName() + "\n" +
+                                "Currency: " + account.GetCurrency() + "\n" +
+                                "Status: " + account.GetAccountStatus() + "\n");
 
-            Console.WriteLine(account.DisplayAccountDetails());
+            Transaction transaction = new Transaction(account);
+            transaction.Withdrawal(49);
+            Console.WriteLine("Balance is " + transaction.GetBalance().ToString());
 
         }
     }

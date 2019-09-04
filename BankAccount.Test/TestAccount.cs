@@ -10,6 +10,7 @@ namespace BankAccountTest
         [Fact]
         public void GetAccountName()
         {
+            //Assert.Equal(expected, actual)
             Assert.Equal("Marnie", account.GetAccountName());
         }
 
@@ -37,6 +38,12 @@ namespace BankAccountTest
         {
             account.SetAccountStatus(false);
             Assert.Equal("Inactive", account.GetAccountStatus());
+        }
+
+        [Fact]
+        public void CheckOverdraft()
+        {
+            Assert.Equal(-50, account.GetOverdraftLimit());
         }
     }
 }
