@@ -4,14 +4,14 @@ namespace BankAccount
 {
     public class Transaction
     {
-        private Decimal deposit;
-        private Decimal withdrawal;
-        private Account account;
-        private Decimal balance;
+        private Decimal _deposit;
+        private Decimal _withdrawal;
+        private Account _account;
+        private Decimal _balance;
 
         public Transaction(Account account)
         {
-            this.account = account;
+            this._account = account;
         }
 
         public void Withdrawal(Decimal withdrawal)
@@ -21,26 +21,26 @@ namespace BankAccount
                 throw new Exception("You have exceeded your overdraft limit");
             }
             
-            this.balance -= withdrawal;
+            this._balance -= withdrawal;
         }
         public void Deposit(Decimal deposit)
         {
-            this.balance += deposit;
+            this._balance += deposit;
         }
 
         public Decimal GetDeposit()
         {
-            return this.deposit;
+            return this._deposit;
         }
 
         public Decimal GetWithdrawal()
         {
-            return this.withdrawal;
+            return this._withdrawal;
         }
         public Boolean HasExceededOverdraft(Decimal withdrawal)
         {
             // 0 <= -50
-            if (GetBalance() - withdrawal <= account.GetOverdraftLimit())
+            if (GetBalance() - withdrawal <= _account.GetOverdraftLimit())
             {
                return true;
             }
@@ -50,7 +50,7 @@ namespace BankAccount
 
         public Decimal GetBalance()
         {
-            return balance;
+            return _balance;
         }
     }
 }

@@ -5,43 +5,43 @@ namespace BankAccount
 {
     public class Account
     {
-        private String accoutName;
-        private String accountNumber;
-        private String currency;
-        private bool accountStatus;
-        public const Decimal overdraftLimit = -50;
+        private String _accoutName;
+        private String _accountNumber;
+        private String _currency;
+        private bool _accountStatus;
+        public const Decimal _overdraftLimit = -50;
 
         public Account(string name, string accountNo, string currency)
         {
-            this.accoutName = name;
-            this.accountNumber = accountNo;
-            this.currency = currency;
+            this._accoutName = name;
+            this._accountNumber = accountNo;
+            this._currency = currency;
             
         }
         public String GetAccountName()
         {
-            return this.accoutName;
+            return this._accoutName;
         }
         public String GetAccountNumber()
         {
-            return this.accountNumber;
+            return this._accountNumber;
         }
         public String GetCurrency()
         {
-            return this.currency;
+            return this._currency;
         }
         public void SetAccountStatus(bool isActive)
         {
-            this.accountStatus = isActive;
+            this._accountStatus = isActive;
         }
         public String GetAccountStatus()
         {
-            return this.accountStatus ? "Active" : "Inactive";
+            return this._accountStatus ? "Active" : "Inactive";
         }
 
         public Decimal GetOverdraftLimit()
         {
-            return overdraftLimit;
+            return _overdraftLimit;
         }
 
        

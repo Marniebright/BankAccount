@@ -8,6 +8,7 @@ namespace BankAccount
         {
             Account account = new Account("Marnie", "S12345678", "HKD");
             account.SetAccountStatus(true);
+
             Console.WriteLine( "Account Number: " + account.GetAccountNumber() + "\n" +
                                 "Account Name: " + account.GetAccountName() + "\n" +
                                 "Currency: " + account.GetCurrency() + "\n" +
@@ -15,6 +16,7 @@ namespace BankAccount
 
             Transaction transaction = new Transaction(account);
             transaction.Withdrawal(49);
+
             Console.WriteLine("Balance is " + transaction.GetBalance().ToString());
 
         }
